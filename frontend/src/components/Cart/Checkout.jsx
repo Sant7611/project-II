@@ -5,22 +5,25 @@ import PaypalButton from "./PaypalButton";
 
 const cart = {
   products: [
+    
     {
-      name: "Stylish Shoes",
-      size: "M",
-      color: "Black",
-      price: 120,
-      image: "https://picsum.photos/150?random=1",
-    },
-    {
-      name: "Stylish Shoes",
-      size: "M",
-      color: "Black",
-      price: 120,
-      image: "https://picsum.photos/150?random=1",
-    },
+          _id: 2,
+          name: "Air Jordan Icon",
+          size:"M",
+          color:"Black",
+          price: 250,
+          images: "https://imgnike-a.akamaihd.net/branding/home-sbf/touts/icone-air-jordan.png" ,
+        },
+        {
+          _id: 3,
+          name: "Buna Beige GT",
+          size:"M",
+          color:"White",
+          price: 180,
+          images:  "https://dochaa.com/wp-content/uploads/2025/01/Buna-Beige-GT-front-300x300.png" ,
+        },
   ],
-  totalPrice: 195,
+  totalPrice: 430,
 };
 const Checkout = () => {
   const [checkoutId, setCheckoutId] = useState(null);

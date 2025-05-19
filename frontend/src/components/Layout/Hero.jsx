@@ -18,7 +18,7 @@ const Hero = () => {
                 Vacation <br /> Ready
               </h1>
               <p className="text-sm tracking-tighter md:text-lg mb-6 ">
-                Explore our vacation-ready outfits with fast worldwide shipping.
+                Explore our vacation-ready foot-fit shoes with fast nationwide shipping.
               </p>
               <Link
                 to="#"
