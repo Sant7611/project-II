@@ -40,10 +40,10 @@ const Checkout = () => {
     setCheckoutId(123);
   };
 
-const handlePaymentSuccess=(details)=>{
-  console.log("Payment success", details)
-  navigate("/order-confirmation");
-}
+  const handlePaymentSuccess = (details) => {
+    console.log("Payment success", details);
+    navigate("/order-confirmation");
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto py-10 px-6 tracking-tighter">
@@ -184,7 +184,11 @@ const handlePaymentSuccess=(details)=>{
               ) : (
                 <div>
                   <h3 className="text-lg mb-4 "> Pay with Paypal</h3>
-                  <PaypalButton amount={100} onSuccess={handlePaymentSuccess} onError={(err)=>alert("Payment failed. try again")} />
+                  <PaypalButton
+                    amount={100}
+                    onSuccess={handlePaymentSuccess}
+                    onError={(err) => alert("Payment failed. try again")}
+                  />
                 </div>
               )}
             </div>
@@ -193,22 +197,47 @@ const handlePaymentSuccess=(details)=>{
       </div>
 
       {/* Right col */}
-      <div className="px-5  bg-yellow-300">
+      <div className="px-5  bg-gray-50">
         <h1 className="text-lg mb-3 font-semibold">Order Summary</h1>
-        <div className="flex my-3 justify-center border-b border-b-gray-300 py-4 ">
-          <img src={summImg} className="w-20 h-30" alt="" />
-          <div className="px-5 w-full ">
-            <h2 className="text-lg">Classic Oxford Button-Down Shirt</h2>
-            <div></div>
-          </div>
-          <p className="w-1/5 font-semibold text-xl">$199.99</p>
+        <div className=" my-3  border-t  py-4 ">
+          {cart.products.map((product, index) => (
+            <div
+              key={index}
+              className="flex items-start justify-between py-2 border-b "
+            >
+              <div className="flex items-start">
+                <img
+                  src={summImg}
+                  className="object-cover mr-4 w-20 h-30"
+                  alt={product.name}
+                />
+
+                <div className="px-5 w-full ">
+                  {console.log(product.name)}
+                  <h2 className="text-lg">{product.name}</h2>
+                  <p className="text-gray-500">Size: {product.size}</p>
+                  <p className="text-gray-500">Color: {product.color}</p>
+                </div>
+              </div>
+              <p className="text-xl">${product.price?.toLocaleString()}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between items-center text-lg mb-4 ">
+          <p>Subtotal</p>
+          <p>${cart.totalPrice?.toLocaleString()}</p>
+        </div>
+        <div className="flex justify-between items-center text-lg ">
+          <p>Shippping</p>
+          <p>Free</p>
+        </div>
+        <div className="flex justify-between items-center text-lg mt-4 border-t pt-4 ">
+          <p>Total</p>
+          <p>${cart.totalPrice.toLocaleString()}</p>
         </div>
       </div>
     </div>
   );
 };
-
-
-
 
 export default Checkout;
