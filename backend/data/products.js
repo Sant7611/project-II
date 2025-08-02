@@ -149,7 +149,7 @@ const products = [
         weight: 1.0
     },
     {
-        name: "Kids' Colorful Trainers",
+        name: "Men' Colorful Trainers",
         description: "Fun and vibrant trainers for kids. Lightweight and supportive for active play.",
         price: 49.99,
         discountPrice: 39.99,
@@ -159,12 +159,12 @@ const products = [
         brand: "LittleSteps",
         sizes: ["1", "2", "3", "4", "5"],
         colors: ["Blue", "Yellow", "Pink"],
-        collections: "Kids 2025",
-        gender: "Kids",
+        collections: "Men 2025",
+        gender: "Men",
         images: [
             {
                 url: "https://example.com/images/kidstrainer1.jpg",
-                altText: "Kids' Colorful Trainers - Main View"
+                altText: "Men' Colorful Trainers - Main View"
             }
         ],
         isFeatured: false,

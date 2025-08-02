@@ -18,7 +18,7 @@ const seedData = async () => {
     //create a default admin user
     const createdUser = await User.create({
       name: "Admin User",
-      email: "admin#example.com",
+      email: "admin@example.com",
       password: "123456",
       role: "admin",
     });
@@ -32,9 +32,9 @@ const seedData = async () => {
     //insert sample products into the database
     await Product.insertMany(sampleProducts);
     console.log("Data seeded successfully");
-
   } catch (error) {
     console.error("Error seeding data:", error);
     process.exit(1); // exit the process with failure
   }
 };
+seedData();

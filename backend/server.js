@@ -14,7 +14,10 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 //connect ot mongodb
-connectDB();
+
+if(connectDB()){
+  console.log("Database connected successfully");
+}
 
 app.get("/", (req, res) => {
   res.send("welcome ");
